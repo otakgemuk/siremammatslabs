@@ -10,7 +10,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false, // build-time freshness: SSG must not read a stale CDN cache
 })
 
 const builder = imageUrlBuilder(client)
