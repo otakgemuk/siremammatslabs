@@ -1,8 +1,7 @@
-"next": "15.1.3"   →   "next": "^15.5.20"
 {
   "name": "siremammats-lab",
   "version": "1.0.0",
-  "description": "Sire Mammat's Lab — Prop Firm & Tools Comparison Research",
+  "description": "Sire Mammat's Lab \u2014 Prop Firm & Tools Comparison Research",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,7 +13,7 @@
     "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
-    "next": "15.1.3",
+    "next": "^15.5.20",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "@sanity/client": "^6.15.0",
