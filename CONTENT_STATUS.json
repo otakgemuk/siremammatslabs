@@ -1,10 +1,62 @@
 {
-  "checkedAt": "2026-07-16T14:52:17.901Z",
-  "comparisons": [],
-  "counts": {
-    "comparison": 0,
-    "plan": 0,
-    "propFirm": 0
+  "checkedAt": "2026-07-16T14:53:53.496Z",
+  "hasToken": true,
+  "identity": {
+    "id": "p2xsmKsji",
+    "givenName": "Claude (Robot)",
+    "familyName": null,
+    "name": "Claude (Robot)",
+    "email": null,
+    "profileImage": null,
+    "role": "write",
+    "roles": [
+      {
+        "name": "editor",
+        "title": "Editor",
+        "description": "Read and write access to all datasets, with limited access to project settings. (Tokens: read+write)"
+      }
+    ],
+    "provider": "sanity-token"
   },
-  "publicReadable": true
+  "datasets": [
+    {
+      "name": "production",
+      "aclMode": "public",
+      "createdAt": "2026-07-13T05:40:34.058Z",
+      "createdByUserId": "p8OxH1MWz",
+      "addonFor": null,
+      "datasetProfile": "content",
+      "features": [],
+      "tags": []
+    }
+  ],
+  "imports": [
+    {
+      "file": "50k-showdown.ndjson",
+      "transactionId": "aq7AUICLogGimJulQ9Dlpd",
+      "results": [
+        "plan.tpt-test-50k:update",
+        "plan.ffn-steady-50k:update",
+        "plan.tradeday-quickpay-50k:update",
+        "comparison.50k-showdown:update",
+        "propFirm.tpt:update",
+        "propFirm.ffn:update",
+        "propFirm.tradeday:update"
+      ]
+    },
+    {
+      "file": "mff-decoded.ndjson",
+      "transactionId": "6rm71nnTDOxtgIcQO1nifO",
+      "results": [
+        "propFirm.mff:update",
+        "plan.mff-builder-50k:update",
+        "plan.mff-rapid-50k:update",
+        "plan.mff-pro-50k:update",
+        "comparison.mff-builder-rapid-pro:update"
+      ]
+    }
+  ],
+  "authedCount": 12,
+  "publicCount": 0,
+  "comparisonSlugs": []
 }
