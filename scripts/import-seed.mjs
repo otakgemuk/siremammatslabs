@@ -29,4 +29,13 @@ for (const file of files) {
   console.log(`  ✓ committed transaction ${res.transactionId} (${res.results.length} docs)`)
   for (const r of res.results) console.log(`    - ${r.id}: ${r.operation}`)
 }
+// Clean up retired (dot-ID) documents — dot IDs are private in Sanity and were a naming mistake
+try {
+  const retired = JSON.parse(readFileSync(join(seedDir, 'retired-ids.json'), 'utf8'))
+  let tx = client.transaction()
+  for (const id of retired) tx = tx.delete(id)
+  const res = await tx.commit()
+  console.log(`Retired ${retired.length} dot-ID documents (tx ${res.transactionId})`)
+} catch (e) { console.log('Retire step skipped:', e.message) }
+
 console.log('Seed import complete.')
