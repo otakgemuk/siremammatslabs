@@ -1,16 +1,39 @@
-// Queries Sanity EXACTLY as the public site does: no token, useCdn false.
+// Closed-loop diagnostic: import seeds, read back authed + public, record everything.
 import { createClient } from '@sanity/client'
-import { writeFileSync } from 'node:fs'
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
 
-const client = createClient({ projectId: '30x3sh80', dataset: 'production', apiVersion: '2024-01-01', useCdn: false })
-const out = { checkedAt: new Date().toISOString() }
+const token = process.env.SANITY_AUTH_TOKEN
+const base = { projectId: '30x3sh80', dataset: 'production', apiVersion: '2024-01-01', useCdn: false }
+const authed = createClient({ ...base, token })
+const publicC = createClient(base)
+const out = { checkedAt: new Date().toISOString(), hasToken: !!token }
+
 try {
-  out.comparisons = await client.fetch(`*[_type == "comparison"]{ "slug": slug.current, title }`)
-  out.counts = await client.fetch(`{ "comparison": count(*[_type=="comparison"]), "plan": count(*[_type=="plan"]), "propFirm": count(*[_type=="propFirm"]) }`)
-  out.publicReadable = true
-} catch (e) {
-  out.publicReadable = false
-  out.error = String(e.message || e)
-}
+  // Who does this token think it is?
+  out.identity = await authed.request({ uri: '/users/me' })
+} catch (e) { out.identityError = String(e.message || e) }
+
+try {
+  // Which datasets exist on this project?
+  out.datasets = await authed.request({ uri: `/projects/30x3sh80/datasets` })
+} catch (e) { out.datasetsError = String(e.message || e) }
+
+try {
+  const files = readdirSync('sanity/seed').filter((f) => f.endsWith('.ndjson'))
+  out.imports = []
+  for (const f of files) {
+    const docs = readFileSync(join('sanity/seed', f), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l))
+    let tx = authed.transaction()
+    for (const d of docs) tx = tx.createOrReplace(d)
+    const res = await tx.commit({ visibility: 'sync' })
+    out.imports.push({ file: f, transactionId: res.transactionId, results: res.results.map((r) => `${r.id}:${r.operation}`) })
+  }
+} catch (e) { out.importError = String(e.message || e) }
+
+out.authedCount = await authed.fetch('count(*[_type in ["comparison","plan","propFirm"]])').catch((e) => String(e))
+out.publicCount = await publicC.fetch('count(*[_type in ["comparison","plan","propFirm"]])').catch((e) => String(e))
+out.comparisonSlugs = await publicC.fetch('*[_type=="comparison"].slug.current').catch((e) => String(e))
+
 writeFileSync('CONTENT_STATUS.json', JSON.stringify(out, null, 2))
 console.log(JSON.stringify(out, null, 2))
