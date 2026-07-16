@@ -105,6 +105,7 @@ export default defineType({
               title: 'Table Data (if type = "table")',
               hidden: true,
               fields: [
+              { name: 'columns', title: 'Column Headers', type: 'array', of: [{ type: 'string' }], validation: (Rule: any) => Rule.max(3) },
                 {
                   name: 'rows',
                   type: 'array',

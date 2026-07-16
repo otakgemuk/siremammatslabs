@@ -155,6 +155,20 @@ export default async function ComparisonPage({ params }: Props) {
             {section.sectionType === 'table' && section.tableData?.rows && (
               <div className="table-wrapper">
                 <table className="w-full text-sm">
+                  {section.tableData.columns?.length > 0 && (
+                    <thead>
+                      <tr className="border-b-2 border-gold/50 bg-navy">
+                        <th className="text-left px-4 py-3 font-mono text-[10px] tracking-[0.25em] text-gold uppercase w-1/4">
+                          Factor
+                        </th>
+                        {section.tableData.columns.map((c: string, i: number) => (
+                          <th key={i} className="text-left px-4 py-3 font-mono text-[10px] tracking-[0.25em] text-gold uppercase">
+                            {c}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                  )}
                   <tbody>
                     {section.tableData.rows.map((row: any, i: number) => (
                       <tr
