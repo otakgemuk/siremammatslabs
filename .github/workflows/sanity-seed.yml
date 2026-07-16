@@ -1,0 +1,33 @@
+name: Import Sanity Seed
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'sanity/seed/**.ndjson'
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Sanity CLI
+        run: npm install --no-save sanity
+
+      - name: Import seed documents
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+        run: |
+          for f in sanity/seed/*.ndjson; do
+            echo "Importing $f"
+            npx sanity dataset import "$f" production --allow-failing-assets
+          done
+
+      - name: Summary
+        run: echo "Seed import complete — trigger a Vercel redeploy or wait for ISR to pick up the content."
