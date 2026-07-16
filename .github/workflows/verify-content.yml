@@ -1,0 +1,21 @@
+name: Verify Public Content
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node scripts/verify-content.mjs
+      - name: Commit status file
+        run: |
+          git config user.name "lab-bot"
+          git config user.email "bot@siremammat.dev"
+          git add CONTENT_STATUS.json
+          git commit -m "chore: content status [skip-verify]" || echo "no change"
+          git push
