@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-16T14:53:53.496Z",
+  "checkedAt": "2026-07-16T14:56:12.726Z",
   "hasToken": true,
   "identity": {
     "id": "p2xsmKsji",
@@ -33,30 +33,33 @@
   "imports": [
     {
       "file": "50k-showdown.ndjson",
-      "transactionId": "aq7AUICLogGimJulQ9Dlpd",
+      "transactionId": "v4Gmojd07EdzSZUAQ2tnAj",
       "results": [
-        "plan.tpt-test-50k:update",
-        "plan.ffn-steady-50k:update",
-        "plan.tradeday-quickpay-50k:update",
-        "comparison.50k-showdown:update",
-        "propFirm.tpt:update",
-        "propFirm.ffn:update",
-        "propFirm.tradeday:update"
+        "plan-ffn-steady-50k:update",
+        "plan-tradeday-quickpay-50k:update",
+        "comparison-50k-showdown:update",
+        "propFirm-tpt:update",
+        "propFirm-ffn:update",
+        "propFirm-tradeday:update",
+        "plan-tpt-test-50k:update"
       ]
     },
     {
       "file": "mff-decoded.ndjson",
-      "transactionId": "6rm71nnTDOxtgIcQO1nifO",
+      "transactionId": "6rm71nnTDOxtgIcQO1oIog",
       "results": [
-        "propFirm.mff:update",
-        "plan.mff-builder-50k:update",
-        "plan.mff-rapid-50k:update",
-        "plan.mff-pro-50k:update",
-        "comparison.mff-builder-rapid-pro:update"
+        "plan-mff-pro-50k:update",
+        "comparison-mff-builder-rapid-pro:update",
+        "propFirm-mff:update",
+        "plan-mff-builder-50k:update",
+        "plan-mff-rapid-50k:update"
       ]
     }
   ],
   "authedCount": 12,
-  "publicCount": 0,
-  "comparisonSlugs": []
+  "publicCount": 12,
+  "comparisonSlugs": [
+    "50k-showdown",
+    "mff-builder-rapid-pro"
+  ]
 }
