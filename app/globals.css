@@ -1,56 +1,123 @@
 @import "tailwindcss";
 
+@theme {
+  --color-dark: #0D0D0D;
+  --color-navy: #1A2540;
+  --color-gold: #C9920A;
+  --color-light: #FAF9F5;
+  --color-midgray: #B0AEA5;
+  --color-lightgray: #E8E6DC;
+  --color-red: #CC2936;
+  --color-green: #15803D;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    @apply bg-dark text-light;
+    @apply bg-dark text-light font-sans antialiased;
   }
-
-  h1 {
+  h1, h2, h3 {
     @apply font-display tracking-wide;
   }
-
-  h2 {
-    @apply font-display text-2xl md:text-3xl tracking-wide;
+  ::selection {
+    background: #C9920A;
+    color: #0D0D0D;
   }
-
-  h3 {
-    @apply font-display text-xl tracking-wide;
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #C9920A;
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
   .section {
-    @apply max-w-6xl mx-auto px-6 py-16 md:py-24;
+    @apply max-w-6xl mx-auto px-6 py-16 md:py-20;
   }
 
+  /* Lab bench hairline — gold rule with tick marks */
+  .bench-line {
+    @apply relative h-px bg-gold/30;
+  }
+  .bench-line::before,
+  .bench-line::after {
+    content: "";
+    @apply absolute top-1/2 -translate-y-1/2 w-px h-2 bg-gold/60;
+  }
+  .bench-line::before { left: 0; }
+  .bench-line::after { right: 0; }
+
+  /* Dossier card */
   .card {
-    @apply bg-navy border border-gold/25 rounded-lg p-6 hover:border-gold hover:shadow-lg transition-all duration-200;
+    @apply relative bg-navy border border-gold/20 rounded-lg p-6 transition-all duration-200;
+  }
+  .card:hover {
+    @apply border-gold/70 -translate-y-0.5;
+    box-shadow: 0 10px 30px -12px rgba(201, 146, 10, 0.25);
+  }
+  .card::before {
+    content: "";
+    @apply absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold rounded-tl-lg opacity-0 transition-opacity duration-200;
+  }
+  .card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Specimen chip — mono label tags */
+  .chip {
+    @apply inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] uppercase text-gold border border-gold/30 bg-gold/5 rounded-sm px-3 py-1.5;
+  }
+  .chip-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-gold;
+  }
+  .chip-dot.pulse {
+    animation: chip-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes chip-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
+
+  /* Specimen rail — the Lab's signature data strip */
+  .rail {
+    @apply border-y border-gold/20 bg-navy/60 overflow-hidden;
+  }
+  .rail-track {
+    @apply flex items-center gap-10 px-6 py-3 font-mono text-[11px] tracking-[0.18em] uppercase text-midgray whitespace-nowrap overflow-x-auto;
+    scrollbar-width: none;
+  }
+  .rail-track::-webkit-scrollbar { display: none; }
+  .rail-track b {
+    @apply text-lightgray font-normal;
+  }
+  .rail-track em {
+    @apply not-italic text-gold;
   }
 
   .btn-primary {
-    @apply bg-gold text-dark font-mono text-sm font-semibold px-6 py-3 rounded-lg hover:bg-gold/90 transition-colors;
+    @apply bg-gold text-dark font-mono text-sm font-semibold px-6 py-3 rounded-md hover:bg-gold/90 transition-colors;
   }
-
   .btn-secondary {
-    @apply border border-gold text-gold font-mono text-sm font-semibold px-6 py-3 rounded-lg hover:bg-gold/10 transition-colors;
+    @apply border border-gold text-gold font-mono text-sm font-semibold px-6 py-3 rounded-md hover:bg-gold/10 transition-colors;
   }
 
   .table-wrapper {
     @apply overflow-x-auto border border-gold/25 rounded-lg;
   }
-
-  .stat-card {
-    @apply text-center;
-  }
-
   .stat-value {
     @apply font-display text-3xl md:text-4xl text-gold;
   }
-
   .stat-label {
     @apply font-mono text-xs tracking-wider text-midgray uppercase mt-2;
   }
