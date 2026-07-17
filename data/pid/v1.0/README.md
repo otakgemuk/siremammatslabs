@@ -48,3 +48,26 @@ SANITY_AUTH_TOKEN=... node scripts/import-pid.mjs --commit
 The importer never deletes documents and does not modify comparison documents.
 Review the generated NDJSON and the validation report before publishing
 consumer-facing prices or rules.
+
+## Generated-ID migration
+
+The initial import used stable legacy IDs so the first load could be repeated.
+To move those records to Sanity-generated IDs, first regenerate the NDJSON and
+run the migration in dry-run mode:
+
+```bash
+npm run pid:generate
+SANITY_AUTH_TOKEN=... npm run pid:migrate-ids
+```
+
+Review `data/pid/v1.0/generated/id-migration-report.json`. The script stops if
+it finds duplicate `pidId` values or references from documents outside the PID
+set. Only run the destructive cutover after the dry run is clean:
+
+```bash
+SANITY_AUTH_TOKEN=... npm run pid:migrate-ids -- --commit --delete-legacy
+```
+
+The migration creates firms before plans, rewrites PID-owned references, keeps
+`pidId` as the source identity, verifies the post-migration counts, and removes
+only the legacy PID IDs.

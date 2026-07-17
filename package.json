@@ -11,7 +11,8 @@
     "sanity:dev": "sanity dev",
     "sanity:build": "sanity build",
     "sanity:deploy": "sanity deploy",
-    "pid:generate": "node scripts/import-pid.mjs"
+    "pid:generate": "node scripts/import-pid.mjs",
+    "pid:migrate-ids": "node scripts/migrate-pid-ids.mjs"
   },
   "dependencies": {
     "next": "^15.5.20",
