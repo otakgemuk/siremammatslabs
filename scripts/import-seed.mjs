@@ -6,7 +6,7 @@ const token = process.env.SANITY_AUTH_TOKEN
 if (!token) { console.error('SANITY_AUTH_TOKEN missing'); process.exit(1) }
 
 const client = createClient({
-  projectId: '30x3sh80',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6hyvhmum',
   dataset: 'production',
   apiVersion: '2024-01-01',
   token,
