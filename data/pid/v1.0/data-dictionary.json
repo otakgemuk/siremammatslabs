@@ -1,0 +1,1858 @@
+[
+  {
+    "sheet_name": "Firms",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "apex"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Apex Trader Funding"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "official_website",
+    "sql_name": "official_website",
+    "description": "Official firm website.",
+    "nullable": "Yes",
+    "example": "https://apextraderfunding.com"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "country",
+    "sql_name": "country",
+    "description": "Country explicitly captured from official materials; blank means not verified.",
+    "nullable": "Yes",
+    "example": "United States"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "founded_year",
+    "sql_name": "founded_year",
+    "description": "Founding year only when verified from an official source.",
+    "nullable": "Yes",
+    "example": "2012"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "trustpilot_rating",
+    "sql_name": "trustpilot_rating",
+    "description": "Third-party Trustpilot rating; intentionally blank until separately rechecked.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "discord_or_community",
+    "sql_name": "discord_or_community",
+    "description": "Officially linked Discord/community if captured.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "supported_platforms",
+    "sql_name": "supported_platforms",
+    "description": "Normalized platform list.",
+    "nullable": "Yes",
+    "example": "TopstepX; other supported connections vary"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "supported_data_feeds",
+    "sql_name": "supported_data_feeds",
+    "description": "Normalized data-feed list.",
+    "nullable": "Yes",
+    "example": "TopstepX; platform dependent"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "maximum_allocation",
+    "sql_name": "maximum_allocation",
+    "description": "Maximum allocation or account count if verified.",
+    "nullable": "Yes",
+    "example": "Up to 5 Express Funded Accounts; program-specific"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "official_futures_available",
+    "sql_name": "official_futures_available",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "true"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-001;SRC-002;SRC-066;SRC-067;SRC-068;SRC-069"
+  },
+  {
+    "sheet_name": "Firms",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Public-source baseline; verify dashboard/checkout terms before publication."
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "evaluation_id",
+    "sql_name": "evaluation_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "apex-25000-eodevaluation"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "apex"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Apex Trader Funding"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "EOD Evaluation"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "account_size_usd",
+    "sql_name": "account_size_usd",
+    "description": "Nominal account size in USD where applicable.",
+    "nullable": "Yes",
+    "example": "25000"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "pricing_usd",
+    "sql_name": "pricing_usd",
+    "description": "Evaluation/plan price in USD; may be a range when official page displays a range.",
+    "nullable": "Yes",
+    "example": "170"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "pricing_model",
+    "sql_name": "pricing_model",
+    "description": "One-time, monthly subscription, or program-specific billing.",
+    "nullable": "Yes",
+    "example": "One-time evaluation; current price not captured"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "profit_target_usd",
+    "sql_name": "profit_target_usd",
+    "description": "Profit target in USD.",
+    "nullable": "Yes",
+    "example": "1500"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "drawdown_model",
+    "sql_name": "drawdown_model",
+    "description": "Normalized drawdown label: Static, Trailing Intraday, Trailing EOD, Dynamic EOD, or mixed.",
+    "nullable": "Yes",
+    "example": "Trailing EOD"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "max_drawdown_usd",
+    "sql_name": "max_drawdown_usd",
+    "description": "Maximum loss/drawdown in USD where available.",
+    "nullable": "Yes",
+    "example": "1000"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "daily_loss_limit_usd",
+    "sql_name": "daily_loss_limit_usd",
+    "description": "Daily loss limit in USD; zero means officially no DLL in the captured program.",
+    "nullable": "Yes",
+    "example": "500"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "end_of_day_drawdown_usd",
+    "sql_name": "end_of_day_drawdown_usd",
+    "description": "EOD drawdown amount in USD.",
+    "nullable": "Yes",
+    "example": "1000"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "static_drawdown_usd",
+    "sql_name": "static_drawdown_usd",
+    "description": "Static drawdown amount in USD.",
+    "nullable": "Yes",
+    "example": "1000"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "max_contracts",
+    "sql_name": "max_contracts",
+    "description": "Maximum mini/standard contracts; program-specific.",
+    "nullable": "Yes",
+    "example": "4"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "max_micros",
+    "sql_name": "max_micros",
+    "description": "Maximum micro contracts; program-specific.",
+    "nullable": "Yes",
+    "example": "50"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "minimum_trading_days",
+    "sql_name": "minimum_trading_days",
+    "description": "Minimum trading days or equivalent qualifying-day count.",
+    "nullable": "Yes",
+    "example": "0"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "consistency_rule",
+    "sql_name": "consistency_rule",
+    "description": "Normalized consistency requirement or None.",
+    "nullable": "Yes",
+    "example": "None"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "activation_fee_usd",
+    "sql_name": "activation_fee_usd",
+    "description": "Activation fee in USD; zero is an explicitly free activation, blank is unknown/conditional.",
+    "nullable": "Yes",
+    "example": "0"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "reset_fee_usd",
+    "sql_name": "reset_fee_usd",
+    "description": "Reset fee in USD.",
+    "nullable": "Yes",
+    "example": "0"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "monthly_fee_usd",
+    "sql_name": "monthly_fee_usd",
+    "description": "Monthly recurring charge in USD.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "time_limit",
+    "sql_name": "time_limit",
+    "description": "Evaluation/activity/expiration timing.",
+    "nullable": "Yes",
+    "example": "30 calendar days"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "platforms",
+    "sql_name": "platforms",
+    "description": "Platforms in the captured program.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "data_feeds",
+    "sql_name": "data_feeds",
+    "description": "Data feeds in the captured program.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-066;SRC-068;SRC-069"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://apextraderfunding.com/help-center/eod-trailing-drawdown-accounts/eod-evaluations/"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Evaluation Accounts",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "7 calendar days to activate the corresponding PA after passing."
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "funded_id",
+    "sql_name": "funded_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "topstep-funded-50000-expressfundedaccount"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "topstep"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Topstep"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Express Funded Account"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "account_size_usd",
+    "sql_name": "account_size_usd",
+    "description": "Nominal account size in USD where applicable.",
+    "nullable": "Yes",
+    "example": "50000"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "funded_account_type",
+    "sql_name": "funded_account_type",
+    "description": "Simulated funded, live, LiveSim, brokerage, or other stage.",
+    "nullable": "Yes",
+    "example": "Simulated funded"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "starting_balance_model",
+    "sql_name": "starting_balance_model",
+    "description": "How the funded stage starts or carries balance.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "drawdown_model",
+    "sql_name": "drawdown_model",
+    "description": "Normalized drawdown label: Static, Trailing Intraday, Trailing EOD, Dynamic EOD, or mixed.",
+    "nullable": "Yes",
+    "example": "Trailing EOD; MLL resets to 0 after payout"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "max_drawdown_usd",
+    "sql_name": "max_drawdown_usd",
+    "description": "Maximum loss/drawdown in USD where available.",
+    "nullable": "Yes",
+    "example": "2000"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "daily_loss_limit_usd",
+    "sql_name": "daily_loss_limit_usd",
+    "description": "Daily loss limit in USD; zero means officially no DLL in the captured program.",
+    "nullable": "Yes",
+    "example": "1100"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "max_contracts",
+    "sql_name": "max_contracts",
+    "description": "Maximum mini/standard contracts; program-specific.",
+    "nullable": "Yes",
+    "example": "2"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "max_micros",
+    "sql_name": "max_micros",
+    "description": "Maximum micro contracts; program-specific.",
+    "nullable": "Yes",
+    "example": "20"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "profit_split_trader_pct",
+    "sql_name": "profit_split_trader_pct",
+    "description": "Trader share as a percentage of requested profit.",
+    "nullable": "Yes",
+    "example": "90"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "first_payout_requirements",
+    "sql_name": "first_payout_requirements",
+    "description": "Conditions for first payout or withdrawal.",
+    "nullable": "Yes",
+    "example": "Standard: 5 winning days of $150+; Consistency path: at least 3 days and 40% best-day rule"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "payout_frequency",
+    "sql_name": "payout_frequency",
+    "description": "Normalized payout cadence.",
+    "nullable": "Yes",
+    "example": "After eligibility; program path specific"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "withdrawal_cap_usd",
+    "sql_name": "withdrawal_cap_usd",
+    "description": "Maximum per-request payout where verified.",
+    "nullable": "Yes",
+    "example": "2000"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "activation_fee_usd",
+    "sql_name": "activation_fee_usd",
+    "description": "Activation fee in USD; zero is an explicitly free activation, blank is unknown/conditional.",
+    "nullable": "Yes",
+    "example": "0"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "maximum_allocation",
+    "sql_name": "maximum_allocation",
+    "description": "Maximum allocation or account count if verified.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "live_transition",
+    "sql_name": "live_transition",
+    "description": "Rules or discretion governing transition to live capital.",
+    "nullable": "Yes",
+    "example": "Possible move to Live or Pro subject to program/risk team"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-005"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.topstep.com/en/articles/8284233-topstep-payout-policy"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Funded Accounts",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Withdrawal split/cap is size and request-size dependent; first LiveSim activation fee applies to non-professional CME status."
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "drawdown_id",
+    "sql_name": "drawdown_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "dd-topstep-eod"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "topstep"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Topstep"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Evaluation"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Trading Combine"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "drawdown_model",
+    "sql_name": "drawdown_model",
+    "description": "Normalized drawdown label: Static, Trailing Intraday, Trailing EOD, Dynamic EOD, or mixed.",
+    "nullable": "Yes",
+    "example": "Trailing EOD"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "basis",
+    "sql_name": "basis",
+    "description": "Balance/equity/PnL basis for the rule.",
+    "nullable": "Yes",
+    "example": "Highest end-of-day balance"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "amount_or_pct",
+    "sql_name": "amount_or_pct",
+    "description": "Official amount or percentage description.",
+    "nullable": "Yes",
+    "example": "$2,000 / $3,000 / $4,500 by 50K/100K/150K"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "update_timing",
+    "sql_name": "update_timing",
+    "description": "Intraday, EOD, session close, etc.",
+    "nullable": "Yes",
+    "example": "End of day; monitored intraday"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "locks_at_initial_balance",
+    "sql_name": "locks_at_initial_balance",
+    "description": "Whether the drawdown becomes static at the initial balance.",
+    "nullable": "Yes",
+    "example": "true"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "breach_condition",
+    "sql_name": "breach_condition",
+    "description": "What causes a breach/closure.",
+    "nullable": "Yes",
+    "example": "Balance/equity hits MLL"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "official_rule_summary",
+    "sql_name": "official_rule_summary",
+    "description": "Concise official-source rule description.",
+    "nullable": "Yes",
+    "example": "Maximum Loss Limit trails upward with end-of-day balance and locks at starting balance."
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-003;SRC-004"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.topstep.com/en/articles/8284204-what-is-the-maximum-loss-limit"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Drawdown Rules",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "High-priority QA item."
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "payout_id",
+    "sql_name": "payout_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "po-tradeify-growth"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "tradeify"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Tradeify"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Growth Funded"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Funded"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "first_payout_requirements",
+    "sql_name": "first_payout_requirements",
+    "description": "Conditions for first payout or withdrawal.",
+    "nullable": "Yes",
+    "example": "5 winning days; 35% consistency; balance threshold"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "minimum_trading_days",
+    "sql_name": "minimum_trading_days",
+    "description": "Minimum trading days or equivalent qualifying-day count.",
+    "nullable": "Yes",
+    "example": "5"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "winning_day_definition",
+    "sql_name": "winning_day_definition",
+    "description": "Definition of a qualifying winning day.",
+    "nullable": "Yes",
+    "example": "$100/$150/$200/$250 profit by 25K/50K/100K/150K"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "min_payout_usd",
+    "sql_name": "min_payout_usd",
+    "description": "Minimum payout request in USD.",
+    "nullable": "Yes",
+    "example": "250"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "payout_frequency",
+    "sql_name": "payout_frequency",
+    "description": "Normalized payout cadence.",
+    "nullable": "Yes",
+    "example": "24-48 hours after approval; up to 72 hours outside business hours"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "payout_cap",
+    "sql_name": "payout_cap",
+    "description": "Per-request or lifecycle payout cap.",
+    "nullable": "Yes",
+    "example": "$1,000-$5,000 by account and payout number"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "profit_split",
+    "sql_name": "profit_split",
+    "description": "Textual profit split description.",
+    "nullable": "Yes",
+    "example": "90% trader"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "payout_methods",
+    "sql_name": "payout_methods",
+    "description": "Officially captured payout methods.",
+    "nullable": "Yes",
+    "example": "Not stated in source snippet"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "processing_time",
+    "sql_name": "processing_time",
+    "description": "Processing estimate or maximum.",
+    "nullable": "Yes",
+    "example": "24-48 hours after processing"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "payout_buffer",
+    "sql_name": "payout_buffer",
+    "description": "Required amount left in account or balance threshold.",
+    "nullable": "Yes",
+    "example": "Balance threshold"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "max_payouts_per_account",
+    "sql_name": "max_payouts_per_account",
+    "description": "Maximum payout count per account.",
+    "nullable": "Yes",
+    "example": "5"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-009"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.tradeify.co/en/articles/11083796-growth-funded-account-payout-policy"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Payout Rules",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Withdrawal fees vary by method and region."
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "scaling_id",
+    "sql_name": "scaling_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "sc-lucid-live"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "lucid"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Lucid Trading"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Live"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Funded"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "trigger",
+    "sql_name": "trigger",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "End-of-day profit range"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "scaling_method",
+    "sql_name": "scaling_method",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Contract size increases with profit; product/exchange-specific"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "max_allocation",
+    "sql_name": "max_allocation",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Not stated"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "details",
+    "sql_name": "details",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "$25K starts 1 mini/$10 micros and reaches 2 minis at $2,000+; larger tables are official source."
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-013"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://support.lucidtrading.com/en/articles/15245873-new-live-scaling-plan"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Scaling Rules",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "consistency_id",
+    "sql_name": "consistency_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "co-topstep"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "topstep"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Topstep"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Trading Combine / XFA"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Evaluation/Funded"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "rule_type",
+    "sql_name": "rule_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Best day percentage"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "threshold",
+    "sql_name": "threshold",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "50% in Combine; 40% on Consistency payout path"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "applies_to",
+    "sql_name": "applies_to",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Program/path specific"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "calculation",
+    "sql_name": "calculation",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Best single day divided by total profit"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-003;SRC-005"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.topstep.com/en/articles/8284197-trading-combine-parameters"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Consistency Rules",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Product page and separate article should be reconciled with current FAQ."
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "fee_id",
+    "sql_name": "fee_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "fee-tradeify"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "tradeify"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Tradeify"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Growth"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "fee_type",
+    "sql_name": "fee_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Activation"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "amount_usd",
+    "sql_name": "amount_usd",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "0"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "currency",
+    "sql_name": "currency",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "USD"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "billing_frequency",
+    "sql_name": "billing_frequency",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "One-time evaluation; no activation fee"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Evaluation/Funded"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "official_rule",
+    "sql_name": "official_rule",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "No activation fee for Growth Simulated Funded; one-time purchase."
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-008"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Fees",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Price may vary with promotions."
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "platform_id",
+    "sql_name": "platform_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "pf-mff"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "mff"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "MyFundedFutures"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "platform",
+    "sql_name": "platform",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Tradovate; TradingView; Volumetrica; DeepCharts; NinjaTrader; ATAS; Quantower"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "data_feed",
+    "sql_name": "data_feed",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "dxFeed; platform dependent"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "account_stages",
+    "sql_name": "account_stages",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Evaluation/Funded"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "supported",
+    "sql_name": "supported",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Yes"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-074"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.myfundedfutures.com/en/collections/5786939-trading-platforms"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Platforms",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Other supported connections vary by product."
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "restriction_id",
+    "sql_name": "restriction_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "res-mff-news"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "mff"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "MyFundedFutures"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Evaluation/Funded"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "restriction_type",
+    "sql_name": "restriction_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "News"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "policy",
+    "sql_name": "policy",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "No open positions or orders 2 minutes before/after all releases; T1 news prohibited on Rapid/Pro Sim Funded but allowed on evaluations and 25K/50K Flex"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-070"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.myfundedfutures.com/en/articles/8230009-news-trading-policy"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Restrictions",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "CME-approved futures only."
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "discount_id",
+    "sql_name": "discount_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "disc-tradeday"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "tradeday"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "TradeDay"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "code",
+    "sql_name": "code",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "MOT"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "discount_value",
+    "sql_name": "discount_value",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "status",
+    "sql_name": "status",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "unverified"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "source_type",
+    "sql_name": "source_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "internal"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-INT-001"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "D:\\chatgptcodex\\scripts\\seed.mjs"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "expiry",
+    "sql_name": "expiry",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Discount Codes",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Affiliate code appears in MightyOx workspace only; verify on official checkout before publication."
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "contract_limit_id",
+    "sql_name": "contract_limit_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "cl-mff-metals"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "mff"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "MyFundedFutures"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Current metals micro limits"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "account_size_usd",
+    "sql_name": "account_size_usd",
+    "description": "Nominal account size in USD where applicable.",
+    "nullable": "Yes",
+    "example": "25K/50K/100K/150K"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "mini_contracts",
+    "sql_name": "mini_contracts",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "5/10/15"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "micro_contracts",
+    "sql_name": "micro_contracts",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "3/5/10/15 for metals"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "product_scope",
+    "sql_name": "product_scope",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Metals products; temporary/current restrictions"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "scaling_rule",
+    "sql_name": "scaling_rule",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Product/account-specific"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-073"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.myfundedfutures.com/en/articles/9735811-futures-instrument-list"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Contract Limits",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Official page also lists temporary restrictions on SI, HG, PL, NG and QG; recheck before publication."
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "account_size_id",
+    "sql_name": "account_size_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "tradeify-growth-25000"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "tradeify"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "firm_name",
+    "sql_name": "firm_name",
+    "description": "Display name used across the database.",
+    "nullable": "Yes",
+    "example": "Tradeify"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "program_name",
+    "sql_name": "program_name",
+    "description": "Named program/product to prevent mixing legacy and current rules.",
+    "nullable": "Yes",
+    "example": "Growth"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "stage",
+    "sql_name": "stage",
+    "description": "Evaluation, funded, or both.",
+    "nullable": "Yes",
+    "example": "Evaluation/Funded"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "account_size_usd",
+    "sql_name": "account_size_usd",
+    "description": "Nominal account size in USD where applicable.",
+    "nullable": "Yes",
+    "example": "25000"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "profit_target_usd",
+    "sql_name": "profit_target_usd",
+    "description": "Profit target in USD.",
+    "nullable": "Yes",
+    "example": "1500"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "max_drawdown_usd",
+    "sql_name": "max_drawdown_usd",
+    "description": "Maximum loss/drawdown in USD where available.",
+    "nullable": "Yes",
+    "example": "1000"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "max_contracts",
+    "sql_name": "max_contracts",
+    "description": "Maximum mini/standard contracts; program-specific.",
+    "nullable": "Yes",
+    "example": "1"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "current_status",
+    "sql_name": "current_status",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "active"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "last_verified",
+    "sql_name": "last_verified",
+    "description": "Date this record was last checked by the research pass.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "SRC-008;SRC-009"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "data_status",
+    "sql_name": "data_status",
+    "description": "verified, partial, unverified, or conflict.",
+    "nullable": "Yes",
+    "example": "verified"
+  },
+  {
+    "sheet_name": "Account Sizes",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": ""
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "change_id",
+    "sql_name": "change_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "CL-2026-07-17-001"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "change_date",
+    "sql_name": "change_date",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "version",
+    "sql_name": "version",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "1.0"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "all"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "change_type",
+    "sql_name": "change_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Initial build"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "field_or_area",
+    "sql_name": "field_or_area",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "All sheets"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "previous_value",
+    "sql_name": "previous_value",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Partial public-source baseline"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "new_value",
+    "sql_name": "new_value",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Initial public-source baseline for 39 firms"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "source_ids",
+    "sql_name": "source_ids",
+    "description": "Semicolon-separated source identifiers linking to Sources.",
+    "nullable": "Yes",
+    "example": "All official sources in Sources sheet"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "source_url",
+    "sql_name": "source_url",
+    "description": "Primary official source URL for the row.",
+    "nullable": "Yes",
+    "example": "https://the5ers.com/futures/"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "change_summary",
+    "sql_name": "change_summary",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Created normalized PID v1.0 with official-source URLs, research-status flags, and missing-data controls."
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "reviewer",
+    "sql_name": "reviewer",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Codex"
+  },
+  {
+    "sheet_name": "Change Log",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Rules and prices are time-sensitive; re-verify at publication and before calculator comparisons."
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "source_id",
+    "sql_name": "source_id",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "SRC-001"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "firm_id",
+    "sql_name": "firm_id",
+    "description": "Stable normalized firm identifier.",
+    "nullable": "Yes",
+    "example": "apex"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "title",
+    "sql_name": "title",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "Apex EOD Evaluations"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "url",
+    "sql_name": "url",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "https://apextraderfunding.com/help-center/eod-trailing-drawdown-accounts/eod-evaluations/"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "source_type",
+    "sql_name": "source_type",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "official"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "last_checked",
+    "sql_name": "last_checked",
+    "description": "Normalized field; see sheet notes and source URL.",
+    "nullable": "Yes",
+    "example": "2026-07-17"
+  },
+  {
+    "sheet_name": "Sources",
+    "column_name": "notes",
+    "sql_name": "notes",
+    "description": "Caveats, unresolved conflicts, or publication guidance.",
+    "nullable": "Yes",
+    "example": "Official help-center page; dynamic account values may vary by program."
+  }
+]

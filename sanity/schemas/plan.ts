@@ -19,6 +19,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'programName',
+      title: 'PID Program Name',
+      type: 'string',
+    }),
+    defineField({
       name: 'accountSize',
       title: 'Account Size ($)',
       type: 'number',
@@ -204,6 +209,37 @@ export default defineType({
       type: 'text',
       rows: 3,
       hidden: true,
+    }),
+    defineField({
+      name: 'pidId',
+      title: 'PID Evaluation ID',
+      type: 'string',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'lastVerified',
+      title: 'PID Last Verified',
+      type: 'date',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'dataStatus',
+      title: 'PID Data Status',
+      type: 'string',
+      options: { list: ['verified', 'partial', 'unverified', 'conflict'] },
+      readOnly: true,
+    }),
+    defineField({
+      name: 'sourceIds',
+      title: 'PID Source IDs',
+      type: 'string',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'sourceUrl',
+      title: 'PID Source URL',
+      type: 'url',
+      readOnly: true,
     }),
   ],
   preview: {

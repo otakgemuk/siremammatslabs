@@ -37,3 +37,6 @@ yarn-error.log*
 
 # Sanity
 .sanity/
+
+# Generated PID import output
+/data/pid/v1.0/generated/
