@@ -4,7 +4,8 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const token = process.env.SANITY_AUTH_TOKEN
-const base = { projectId: '30x3sh80', dataset: 'production', apiVersion: '2024-01-01', useCdn: false }
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6hyvhmum'
+const base = { projectId, dataset: 'production', apiVersion: '2024-01-01', useCdn: false }
 const authed = createClient({ ...base, token })
 const publicC = createClient(base)
 const out = { checkedAt: new Date().toISOString(), hasToken: !!token }
@@ -16,7 +17,7 @@ try {
 
 try {
   // Which datasets exist on this project?
-  out.datasets = await authed.request({ uri: `/projects/30x3sh80/datasets` })
+  out.datasets = await authed.request({ uri: `/projects/${projectId}/datasets` })
 } catch (e) { out.datasetsError = String(e.message || e) }
 
 try {

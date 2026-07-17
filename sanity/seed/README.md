@@ -10,7 +10,7 @@ npx sanity dataset import seed/50k-showdown.ndjson production
 ```
 
 Logged-in Sanity CLI session required (`npx sanity login`), or set `SANITY_AUTH_TOKEN`.
-Project: 30x3sh80 · Dataset: production. Re-running is safe: stable `_id`s mean
+Project: 6hyvhmum · Dataset: production. Re-running is safe: stable `_id`s mean
 documents are updated in place (add `--replace` to force overwrite).
 
 After import, the Vercel site picks the content up on the next build/ISR pass —

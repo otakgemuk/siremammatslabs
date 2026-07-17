@@ -4,7 +4,7 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 // Canonical project — hardcoded so site reads exactly where the seed pipeline writes.
 // (Public values; NEXT_PUBLIC env vars were equally exposed and only added mismatch risk.)
-const projectId = '30x3sh80'
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6hyvhmum'
 const dataset = 'production'
 const apiVersion = '2024-01-01'
 
