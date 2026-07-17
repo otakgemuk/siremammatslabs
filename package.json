@@ -10,7 +10,8 @@
     "sanity": "sanity",
     "sanity:dev": "sanity dev",
     "sanity:build": "sanity build",
-    "sanity:deploy": "sanity deploy"
+    "sanity:deploy": "sanity deploy",
+    "pid:generate": "node scripts/import-pid.mjs"
   },
   "dependencies": {
     "next": "^15.5.20",
