@@ -4,8 +4,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const token = process.env.SANITY_AUTH_TOKEN
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6hyvhmum'
-const base = { projectId, dataset: 'production', apiVersion: '2024-01-01', useCdn: false }
+const base = { projectId: '6hyvhmum', dataset: 'production', apiVersion: '2024-01-01', useCdn: false }
 const authed = createClient({ ...base, token })
 const publicC = createClient(base)
 const out = { checkedAt: new Date().toISOString(), hasToken: !!token }
@@ -17,7 +16,7 @@ try {
 
 try {
   // Which datasets exist on this project?
-  out.datasets = await authed.request({ uri: `/projects/${projectId}/datasets` })
+  out.datasets = await authed.request({ uri: `/projects/6hyvhmum/datasets` })
 } catch (e) { out.datasetsError = String(e.message || e) }
 
 try {
@@ -25,6 +24,7 @@ try {
   out.imports = []
   for (const f of files) {
     const docs = readFileSync(join('sanity/seed', f), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l))
+    if (docs.length === 0) { out.imports.push({ file: f, skipped: 'empty' }); continue }
     let tx = authed.transaction()
     for (const d of docs) tx = tx.createOrReplace(d)
     const res = await tx.commit({ visibility: 'sync' })

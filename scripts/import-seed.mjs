@@ -6,7 +6,7 @@ const token = process.env.SANITY_AUTH_TOKEN
 if (!token) { console.error('SANITY_AUTH_TOKEN missing'); process.exit(1) }
 
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6hyvhmum',
+  projectId: '6hyvhmum',
   dataset: 'production',
   apiVersion: '2024-01-01',
   token,
@@ -21,6 +21,8 @@ for (const file of files) {
     .split('\n')
     .filter(Boolean)
     .map((l) => JSON.parse(l))
+
+  if (docs.length === 0) { console.log(`  (skipped ${file}: empty)`); continue }
 
   console.log(`Importing ${docs.length} documents from ${file} ...`)
   let tx = client.transaction()
