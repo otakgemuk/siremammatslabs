@@ -146,7 +146,7 @@ mkdirSync(dirname(outputPath), { recursive: true })
 writeFileSync(outputPath, `${documents.map((document) => JSON.stringify(document)).join('\n')}\n`, 'utf8')
 
 if (shouldCommit) {
-  const token = process.env.SANITY_AUTH_TOKEN
+  const token = process.env.SANITY_AUTH_TOKEN || process.env.SANITY_API_TOKEN
   if (!token) throw new Error('SANITY_AUTH_TOKEN is required with --commit')
   const { createClient } = await import('@sanity/client')
 

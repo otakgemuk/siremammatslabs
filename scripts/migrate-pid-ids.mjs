@@ -34,7 +34,7 @@ const replaceReferences = (value, idMap) => {
   ]))
 }
 
-const token = process.env.SANITY_AUTH_TOKEN
+const token = process.env.SANITY_AUTH_TOKEN || process.env.SANITY_API_TOKEN
 if (shouldCommit && !token) throw new Error('SANITY_AUTH_TOKEN is required with --commit')
 const { createClient } = await import('@sanity/client')
 const client = createClient({
